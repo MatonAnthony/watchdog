@@ -40,10 +40,12 @@ type StartedProcess struct {
 }
 
 // initialize the global logger & read the configuration file
-func initializer() {
+func initializeLogger() {
 	filename := fmt.Sprintf("watchdog-%s.log", time.Now().Format("2006-01-02 15:04:05"))
 	logger = createLogger(filename)
+}
 
+func initializeConfig() {
 	configfile, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		logger.Fatal("Unable to open configuration file")
@@ -53,11 +55,11 @@ func initializer() {
 	json.Unmarshal(configfile, &configuration)
 }
 
-
 func main() {
 	var waiting sync.WaitGroup
 
-	initializer()
+	initializeLogger()
+	initializeConfig()
 
 	// Launch every Command loaded from the config file in a separate goroutine.
 	for _, process := range configuration.Processes {

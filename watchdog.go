@@ -8,9 +8,12 @@ import (
 	"sync"
 	"bufio"
 	"time"
-	"os/signal"
 	"encoding/json"
 	"io/ioutil"
+	"golang.org/x/crypto/ssh"
+	"strings"
+	"strconv"
+	"errors"
 )
 
 var logger *zap.Logger
@@ -19,6 +22,7 @@ var configuration Config
 // Structure obtained via jsonutil
 type Config struct {
 	Processes []Process `json:"processes"`
+	Targets   []Target  `json:"targets"`
 }
 
 type Logs struct {
@@ -26,6 +30,7 @@ type Logs struct {
 	Stderr string `json:"stderr"`
 }
 type Process struct {
+	Name string         `json:"name"`
 	Arguments  []string `json:"arguments"`
 	Executable string   `json:"executable"`
 	Logs Logs           `json:"logs"`
@@ -34,9 +39,19 @@ type Process struct {
 
 type StartedProcess struct {
 	Executable string `json:"executable`
-	Server string     `json:"server"`
+	Server Target     `json:"server"`
 	Pid int           `json:"pid"`
 	Logs Logs         `json:"logs`
+}
+
+type Target struct {
+	Auth struct {
+		Password   string      `json:"password"`
+		PrivateKey string      `json:"private-key"`
+	} `json:"auth"`
+	Hostname string `json:"hostname"`
+	Port     int    `json:"port"`
+	Username string `json:"username"`
 }
 
 // initialize the global logger & read the configuration file
@@ -136,6 +151,85 @@ func createProcess(executable, stdoutLogfile, stderrLogfile string, arguments ..
 	}
 	waiting.Wait()
 	return nil;
+}
+
+// Utility functions to read the PrivateKey file
+func PublicKeyFile(file string) ssh.AuthMethod {
+	buffer, err := ioutil.ReadFile(file)
+	if err != nil {
+		return nil
+	}
+
+	key, err := ssh.ParsePrivateKey(buffer)
+	if err != nil {
+		return nil
+	}
+	return ssh.PublicKeys(key)
+}
+
+func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
+	var sshConfig ssh.ClientConfig
+	if server.Auth.PrivateKey == "" && server.Auth.Password != "" {
+		logger.Warn("SSH Authentication for " + server.Hostname + " is using an unsafe authentication")
+		sshConfig = ssh.ClientConfig{
+			User: server.Username,
+			Auth: []ssh.AuthMethod{
+				ssh.Password(server.Auth.Password),
+			},
+		}
+	} else if server.Auth.Password == "" && server.Auth.PrivateKey != "" {
+		sshConfig = ssh.ClientConfig{
+			User: server.Username,
+			Auth: []ssh.AuthMethod{
+				PublicKeyFile(server.Auth.PrivateKey),
+			},
+		}
+	} else {
+		logger.Error("Provided target credentials are incomplete")
+		return nil, errors.New("Provided target credentials are incomplete")
+	}
+
+	// Establish the connection
+	connection, err := ssh.Dial("tcp", "" + server.Hostname + ":" + string(server.Port), &sshConfig)
+	if err != nil {
+		logger.Error("Impossible to establish the connection")
+		return nil, err
+	}
+	session, err := connection.NewSession()
+	if err != nil {
+		logger.Error("Impossible to establish the connection")
+		return nil, err
+	}
+
+	// Create the command string
+	arguments := strings.Join(runtime.Arguments, " ")
+	command := fmt.Sprintf("daemonize -v -a -e /var/log/watchdog/%s-err.log -o /var/log/watchdog/%s-out.log "+
+		"-p /var/run/%s.pid %s %s && echo /var/run/%s.pid",
+		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments)
+
+	stdout, err := session.StdoutPipe()
+	if err != nil {
+		logger.Error("StdoutPipe() failed")
+		return nil, err
+	}
+	err = session.Run(command)
+	if err != nil {
+		logger.Error("Command failed")
+		return nil, err
+	}
+	var buffer []byte
+	_, err = stdout.Read(buffer)
+	pid, _ := strconv.Atoi(string(buffer))
+
+	return &StartedProcess{
+		Executable: runtime.Executable,
+		Server: server,
+		Pid: pid,
+		Logs: Logs {
+			Stdout: runtime.Name + "-out.log",
+			Stderr: runtime.Name + "-err.log",
+		},
+	}, nil
 }
 
 // Create a Logger writing to the path specified in parameter

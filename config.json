@@ -1,0 +1,32 @@
+{
+    "processes" : [
+        {
+            "executable": "/usr/bin/tail",
+            "arguments": ["-f", "test.cat"],
+            "number": 3,
+            "logs": {
+                "stdout": "ls-stdout.log",
+                "stderr": "ls-stderr.log"
+            }
+        },
+        {
+            "executable": "/usr/bin/tail",
+            "arguments": ["-f", "test.cat"],
+            "number": 5,
+            "logs": {
+                "stdout": "tail-stdout.log",
+                "stderr": "tail-stderr.log"
+            }
+        },
+        {
+            "executable": "/usr/bin/tail",
+            "arguments": ["-f", "test.cat"],
+            "number": 3,
+            "logs": {
+                "stdout": "ls-stdout.log",
+                "stderr": "ls-stderr.log"
+            }
+        }
+    ]
+}
+

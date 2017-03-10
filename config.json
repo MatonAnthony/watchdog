@@ -41,7 +41,7 @@
             "port": 22,
             "username": "root",
             "auth": {
-                "password": null,
+                "password": "",
                 "private-key": "/home/jojo/.ssh_id/private.key"
             }
         },
@@ -51,7 +51,7 @@
             "username": "root",
             "auth": {
                 "password": "P@&&wœrd",
-                "private-key": null
+                "private-key": ""
             }
         }
     ]

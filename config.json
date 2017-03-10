@@ -1,8 +1,10 @@
 {
     "processes" : [
         {
+            "name": "pythia",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
+            "target": "localhost",
             "number": 3,
             "logs": {
                 "stdout": "ls-stdout.log",
@@ -10,8 +12,10 @@
             }
         },
         {
+            "name": "tail",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
+            "target": "remote-one",
             "number": 5,
             "logs": {
                 "stdout": "tail-stdout.log",
@@ -19,12 +23,35 @@
             }
         },
         {
+            "name": "ls",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
+            "target": "remote-one",
             "number": 3,
             "logs": {
                 "stdout": "ls-stdout.log",
                 "stderr": "ls-stderr.log"
+            }
+        }
+    ],
+
+    "target": [
+        {
+            "hostname": "localhost",
+            "port": 22,
+            "username": "root",
+            "auth": {
+                "password": null,
+                "private-key": "/home/jojo/.ssh_id/private.key"
+            }
+        },
+        {
+            "hostname": "not.so-secure.server",
+            "port": 22,
+            "username": "root",
+            "auth": {
+                "password": "P@&&wœrd",
+                "private-key": null
             }
         }
     ]

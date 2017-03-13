@@ -20,6 +20,7 @@ import (
 var logger *zap.Logger
 var configuration Config
 var targetMap map[string]Target
+var launchedProcess map[int]StartedProcess
 
 // Structure obtained via jsonutil
 type Config struct {
@@ -85,6 +86,7 @@ func main() {
 	initializeLogger()
 	initializeConfig()
 
+	startedProcess = make(map[int]StartedProcess)
 	// Launch every Command loaded from the config file in a separate goroutine.
 	for _, process := range configuration.Processes {
 		for i := 0; i < process.Number; i++ {
@@ -102,7 +104,13 @@ func main() {
 						process.Arguments...
 					)
 				} else {
-					createRemoteProcess(process, targetMap[process.Target])
+					started, err := createRemoteProcess(process, targetMap[process.Target])
+					if err != nil {
+						Logger.Fatal("Unable to create process")
+						// TODO add a shutdown process that kills all existing process
+						os.Exit(1)
+					}
+					startedProcess[started.Pid] = started
 				}
 			}(process)
 		}
@@ -234,8 +242,6 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 		logger.Error("Command failed")
 		return nil, err
 	}
-	//var buffer []byte
-	//_, err = stdout.Read(buffer)
 	if err != nil {
 		logger.Error("Impossible to read the buffer")
 		return nil, err
@@ -245,9 +251,13 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 		logger.Error("Impossible to convert the buffer to int")
 		return nil, err
 	}
+
 	output := buffer.String()
-	pid, _ := strconv.Atoi(output)
-	fmt.Println(output)
+	pid, err := strconv.Atoi(output)
+	if err != nil {
+		logger.Error("Unexpected output : " + output)
+		return nil, err
+	}
 
 	return &StartedProcess{
 		Executable: runtime.Executable,

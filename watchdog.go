@@ -23,9 +23,8 @@ var targetMap map[string]Target
 // Structure obtained via jsonutil
 type Config struct {
 	Processes []Process `json:"processes"`
-	Targets   []Target  `json:"targets"`
+	Targets   []Target  `json:"target"`
 }
-
 type Logs struct {
 	Stdout string `json:"stdout"`
 	Stderr string `json:"stderr"`
@@ -33,25 +32,24 @@ type Logs struct {
 type Process struct {
 	Name string         `json:"name"`
 	Arguments  []string `json:"arguments"`
+	Target string       `json:"target"`
 	Executable string   `json:"executable"`
 	Logs Logs           `json:"logs"`
 	Number int          `json:"number"`
 }
-
 type StartedProcess struct {
 	Executable string `json:"executable`
 	Server Target     `json:"server"`
 	Pid int           `json:"pid"`
 	Logs Logs         `json:"logs`
 }
-
 type Target struct {
-	Name string `json:"name"`
 	Auth struct {
 		Password   string      `json:"password"`
 		PrivateKey string      `json:"private-key"`
 	} `json:"auth"`
 	Hostname string `json:"hostname"`
+	Name string `json:"name"`
 	Port     int    `json:"port"`
 	Username string `json:"username"`
 }
@@ -73,6 +71,7 @@ func initializeConfig() {
 
 	// Convert my JSON array into a map to avoid multiple array walkthrough
 	targetMap = make(map[string]Target)
+	fmt.Printf("%+v", configuration)
 	for _, target := range configuration.Targets {
 		targetMap[target.Name] = target
 	}
@@ -94,12 +93,16 @@ func main() {
 			// variable
 			go func(process Process){
 				defer waiting.Done()
-				createProcess(
-					process.Executable,
-					process.Logs.Stdout,
-					process.Logs.Stderr,
-					process.Arguments...
-				)
+				if process.Target == "local" {
+					createProcess(
+						process.Executable,
+						process.Logs.Stdout,
+						process.Logs.Stderr,
+						process.Arguments...
+					)
+				} else {
+					createRemoteProcess(process, targetMap[process.Target])
+				}
 			}(process)
 		}
 	}
@@ -199,14 +202,16 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	}
 
 	// Establish the connection
-	connection, err := ssh.Dial("tcp", "" + server.Hostname + ":" + string(server.Port), &sshConfig)
+	connection, err := ssh.Dial("tcp", "" + server.Hostname + ":" + strconv.Itoa(server.Port), &sshConfig)
 	if err != nil {
 		logger.Error("Impossible to establish the connection")
+		fmt.Println(err)
 		return nil, err
 	}
 	session, err := connection.NewSession()
 	if err != nil {
 		logger.Error("Impossible to establish the connection")
+		fmt.Println(err)
 		return nil, err
 	}
 

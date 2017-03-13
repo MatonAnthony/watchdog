@@ -7,8 +7,8 @@
             "target": "ssh-1",
             "number": 3,
             "logs": {
-                "stdout": "ls-stdout.log",
-                "stderr": "ls-stderr.log"
+                "stdout": "pythia-stdout.log",
+                "stderr": "pythia-stderr.log"
             }
         },
         {

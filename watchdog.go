@@ -14,6 +14,7 @@ import (
 	//"strings"
 	"strconv"
 	"errors"
+	"bytes"
 )
 
 var logger *zap.Logger
@@ -216,24 +217,37 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	// Create the command string
 	//arguments := strings.Join(runtime.Arguments, " ")
 	/*command := fmt.Sprintf("daemon -v -E /var/log/watchdog/%s-err.log -O /var/log/watchdog/%s-out.log "+
-		"-P /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
+		"-F /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
 		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments, runtime.Name)
         */
-	command := "echo hello world >> hello.log"
-	stdout, err := session.StdoutPipe()
+	command := "nohup tail -f /var/log/bootstrap.log >> hello.log 2> error.log & echo -n $!"
+	/*stdout, err := session.StdoutPipe()
 	if err != nil {
 		logger.Error("StdoutPipe() failed")
 		return nil, err
-	}
+	}*/
+	var buffer bytes.Buffer
+	session.Stdout = &buffer
+
 	err = session.Run(command)
 	if err != nil {
-		fmt.Println(err)
 		logger.Error("Command failed")
 		return nil, err
 	}
-	var buffer []byte
-	_, err = stdout.Read(buffer)
-	pid, _ := strconv.Atoi(string(buffer))
+	//var buffer []byte
+	//_, err = stdout.Read(buffer)
+	if err != nil {
+		logger.Error("Impossible to read the buffer")
+		return nil, err
+	}
+	if err != nil {
+		fmt.Println(buffer)
+		logger.Error("Impossible to convert the buffer to int")
+		return nil, err
+	}
+	output := buffer.String()
+	pid, _ := strconv.Atoi(output)
+	fmt.Println(output)
 
 	return &StartedProcess{
 		Executable: runtime.Executable,

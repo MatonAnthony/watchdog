@@ -62,8 +62,9 @@ func initializeLogger() {
 	logger = createLogger(filename)
 }
 
-// Load the configuration file
+// Load the configuration file and initialize top level variables
 func initializeConfig() {
+	launchedProcess = make(map[int]StartedProcess)
 	configfile, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		logger.Fatal("Unable to open configuration file")
@@ -77,7 +78,6 @@ func initializeConfig() {
 	for _, target := range configuration.Targets {
 		targetMap[target.Name] = target
 	}
-
 }
 
 func main() {
@@ -86,7 +86,6 @@ func main() {
 	initializeLogger()
 	initializeConfig()
 
-	startedProcess = make(map[int]StartedProcess)
 	// Launch every Command loaded from the config file in a separate goroutine.
 	for _, process := range configuration.Processes {
 		for i := 0; i < process.Number; i++ {
@@ -106,11 +105,11 @@ func main() {
 				} else {
 					started, err := createRemoteProcess(process, targetMap[process.Target])
 					if err != nil {
-						Logger.Fatal("Unable to create process")
+						logger.Fatal("Unable to create process")
 						// TODO add a shutdown process that kills all existing process
 						os.Exit(1)
 					}
-					startedProcess[started.Pid] = started
+					launchedProcess[started.Pid] = *started
 				}
 			}(process)
 		}
@@ -188,8 +187,8 @@ func PublicKeyFile(file string) ssh.AuthMethod {
 	return ssh.PublicKeys(key)
 }
 
-func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
-	var sshConfig ssh.ClientConfig
+func createSSHSession(server Target) (*ssh.Session, error) {
+var sshConfig ssh.ClientConfig
 	if server.Auth.PrivateKey == "" && server.Auth.Password != "" {
 		logger.Warn("SSH Authentication for " + server.Hostname + " is using an unsafe authentication")
 		sshConfig = ssh.ClientConfig{
@@ -219,6 +218,16 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	session, err := connection.NewSession()
 	if err != nil {
 		logger.Error("Impossible to establish the connection")
+		return nil, err
+	}
+
+	return session, nil
+}
+func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
+
+	session, err := createSSHSession(server)
+	if err != nil {
+		logger.Fatal("Failed to obtain an SSH Session")
 		return nil, err
 	}
 
@@ -283,3 +292,11 @@ func createLogger(filepath string) *zap.Logger {
 
 	return logger
 }
+/*
+func shutdownAll() error {
+	for pid, process := range launchedProcess {
+		fmt.Printf("TODO")
+	}
+	return nil;
+}
+*/

@@ -4,7 +4,7 @@
             "name": "pythia",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
-            "target": "localhost",
+            "target": "ssh-1",
             "number": 3,
             "logs": {
                 "stdout": "ls-stdout.log",
@@ -15,7 +15,7 @@
             "name": "tail",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
-            "target": "remote-one",
+            "target": "ssh-1",
             "number": 5,
             "logs": {
                 "stdout": "tail-stdout.log",
@@ -26,7 +26,7 @@
             "name": "ls",
             "executable": "/usr/bin/tail",
             "arguments": ["-f", "test.cat"],
-            "target": "remote-one",
+            "target": "ssh-2",
             "number": 3,
             "logs": {
                 "stdout": "ls-stdout.log",
@@ -37,20 +37,22 @@
 
     "target": [
         {
-            "hostname": "localhost",
-            "port": 22,
+            "name": "ssh-1",
+            "hostname": "0.0.0.0",
+            "port": 32769,
             "username": "root",
             "auth": {
-                "password": "",
-                "private-key": "/home/jojo/.ssh_id/private.key"
+                "password": "password",
+                "private-key": ""
             }
         },
         {
-            "hostname": "not.so-secure.server",
-            "port": 22,
+            "name": "ssh-2",
+            "hostname": "0.0.0.0",
+            "port": 32770,
             "username": "root",
             "auth": {
-                "password": "P@&&wœrd",
+                "password": "password",
                 "private-key": ""
             }
         }

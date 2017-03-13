@@ -18,6 +18,7 @@ import (
 
 var logger *zap.Logger
 var configuration Config
+var targetMap map[string]Target
 
 // Structure obtained via jsonutil
 type Config struct {
@@ -45,6 +46,7 @@ type StartedProcess struct {
 }
 
 type Target struct {
+	Name string `json:"name"`
 	Auth struct {
 		Password   string      `json:"password"`
 		PrivateKey string      `json:"private-key"`
@@ -54,20 +56,27 @@ type Target struct {
 	Username string `json:"username"`
 }
 
-// initialize the global logger & read the configuration file
+// Initialize the global logger
 func initializeLogger() {
 	filename := fmt.Sprintf("watchdog-%s.log", time.Now().Format("2006-01-02 15:04:05"))
 	logger = createLogger(filename)
 }
 
+// Load the configuration file
 func initializeConfig() {
 	configfile, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		logger.Fatal("Unable to open configuration file")
 		os.Exit(255)
 	}
-	// Read the configuration file
 	json.Unmarshal(configfile, &configuration)
+
+	// Convert my JSON array into a map to avoid multiple array walkthrough
+	targetMap = make(map[string]Target)
+	for _, target := range configuration.Targets {
+		targetMap[target.Name] = target
+	}
+
 }
 
 func main() {
@@ -203,9 +212,9 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 
 	// Create the command string
 	arguments := strings.Join(runtime.Arguments, " ")
-	command := fmt.Sprintf("daemonize -v -a -e /var/log/watchdog/%s-err.log -o /var/log/watchdog/%s-out.log "+
-		"-p /var/run/%s.pid %s %s && echo /var/run/%s.pid",
-		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments)
+	command := fmt.Sprintf("daemon -v -E /var/log/watchdog/%s-err.log -O /var/log/watchdog/%s-out.log "+
+		"-P /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
+		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments, runtime.Name)
 
 	stdout, err := session.StdoutPipe()
 	if err != nil {

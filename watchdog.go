@@ -11,7 +11,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"golang.org/x/crypto/ssh"
-	"strings"
+	//"strings"
 	"strconv"
 	"errors"
 )
@@ -205,22 +205,21 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	connection, err := ssh.Dial("tcp", "" + server.Hostname + ":" + strconv.Itoa(server.Port), &sshConfig)
 	if err != nil {
 		logger.Error("Impossible to establish the connection")
-		fmt.Println(err)
 		return nil, err
 	}
 	session, err := connection.NewSession()
 	if err != nil {
 		logger.Error("Impossible to establish the connection")
-		fmt.Println(err)
 		return nil, err
 	}
 
 	// Create the command string
-	arguments := strings.Join(runtime.Arguments, " ")
-	command := fmt.Sprintf("daemon -v -E /var/log/watchdog/%s-err.log -O /var/log/watchdog/%s-out.log "+
+	//arguments := strings.Join(runtime.Arguments, " ")
+	/*command := fmt.Sprintf("daemon -v -E /var/log/watchdog/%s-err.log -O /var/log/watchdog/%s-out.log "+
 		"-P /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
 		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments, runtime.Name)
-
+        */
+	command := "echo hello world >> hello.log"
 	stdout, err := session.StdoutPipe()
 	if err != nil {
 		logger.Error("StdoutPipe() failed")
@@ -228,6 +227,7 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	}
 	err = session.Run(command)
 	if err != nil {
+		fmt.Println(err)
 		logger.Error("Command failed")
 		return nil, err
 	}

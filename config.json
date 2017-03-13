@@ -3,7 +3,7 @@
         {
             "name": "pythia",
             "executable": "/usr/bin/tail",
-            "arguments": ["-f", "test.cat"],
+            "arguments": ["-f", "/var/log/bootstrap.log"],
             "target": "ssh-1",
             "number": 3,
             "logs": {
@@ -14,7 +14,7 @@
         {
             "name": "tail",
             "executable": "/usr/bin/tail",
-            "arguments": ["-f", "test.cat"],
+            "arguments": ["-f", "/var/log/bootstrap.log"],
             "target": "ssh-1",
             "number": 5,
             "logs": {
@@ -25,7 +25,7 @@
         {
             "name": "ls",
             "executable": "/usr/bin/tail",
-            "arguments": ["-f", "test.cat"],
+            "arguments": ["-f", "/var/log/bootstrap.log"],
             "target": "ssh-2",
             "number": 3,
             "logs": {

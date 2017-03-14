@@ -290,19 +290,18 @@ func createLogger(filepath string) *zap.Logger {
 // TODO Add error management
 func shutdownAll() error {
 	var waiting sync.WaitGroup
-	for pid, process := range launchedProcess {
+	for _, process := range launchedProcess {
 		waiting.Add(1)
-		 go func(process StartedProcess) error{
+		 go func(process StartedProcess) {
 			defer waiting.Done()
 			err := signal(process, syscall.SIGTERM)
 			if err != nil {
-				logger.Error("Failed to kill properly " + process.Pid + " on "
-					+ process.Server.Name)
+				logger.Error("Failed to kill properly " + strconv.Itoa(process.Pid) + " on " +
+					process.Server.Name)
 				err = signal(process, syscall.SIGKILL)
 				if err != nil {
-					logger.Error("Failed to kill abruptely " + process.Pid + " on "
-						+ process.Server.Name)
-					return err
+					logger.Error("Failed to kill abruptely " + strconv.Itoa(process.Pid) +
+						" on " + process.Server.Name)
 				}
 			}
 		}(process)
@@ -314,7 +313,7 @@ func shutdownAll() error {
 
 // Signal the process using kill -s $SIGNAL $PID to signal the process
 // TODO: Also return stdout and stderr
-func signal(process StartedProcess, signal Signal) error {
+func signal(process StartedProcess, signal syscall.Signal) error {
 	if process.Server.Name != "local" {
 		command := fmt.Sprintf("kill -s %d %d", signal, process.Pid)
 		session, err := createSSHSession(process.Server)
@@ -324,20 +323,50 @@ func signal(process StartedProcess, signal Signal) error {
 		}
 		err = session.Run(command)
 		if err != nil {
-			logger.Error("Failed to send signal " + signal.String() + " to " + process.Pid + " - "
-				+ process.Server.Name)
+			logger.Error("Failed to send signal " + signal.String() + " to " +
+				strconv.Itoa(process.Pid) + " - " + process.Server.Name)
 			return err
 		}
 	} else {
 		// We are on the local machine so we need a specific treatment
 		executable := "/bin/kill"
-		arguments := ["-s", strconv.Itoa(signal), strconv.Itoa(process.Pid)]
+		arguments := []string{"-s", signal.String(), strconv.Itoa(process.Pid)}
 		command := exec.Command(executable, arguments...)
 		if err := command.Start(); err != nil {
-			logger.Error("Failed to send signal" + signal.String() + " to " + process.Pid + " - "
-				+ process.Server.Name)
+			logger.Error("Failed to send signal" + signal.String() + " to " +
+				strconv.Itoa(process.Pid) + " - " + process.Server.Name)
 			return err
 		}
 	}
+	return nil
+}
+
+// Execute the function passed in parameter at the define frequency (in millisecond) on the given process
+// Go count in nanosecond but we multiply by time.Millisecond
+func watch(process StartedProcess, frequency int, onTick func(StartedProcess) (string, error),
+	onCrash func(StartedProcess) error) error {
+
+	if(frequency <= 0) {
+		return errors.New("Illegal Argument frequency must be greater than 0")
+	}
+
+	ticker := time.NewTicker(time.Duration(frequency) * time.Millisecond)
+	// We don't care about the channel content, the signal emitted when the channel is closed is what we
+	// are after
+	quit := make(chan(struct{}))
+	go func() {
+		for {
+			select {
+			case <- ticker.C:
+				_, err := onTick(process)
+				if err != nil {
+					onCrash(process)
+				}
+			case <- quit:
+				ticker.Stop()
+				return
+			}
+		}
+	}()
 	return nil
 }

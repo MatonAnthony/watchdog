@@ -11,7 +11,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"golang.org/x/crypto/ssh"
-	//"strings"
+	"strings"
 	"strconv"
 	"errors"
 	"bytes"
@@ -235,19 +235,10 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 	session.Stdout = &buffer
 
 	// Create the command string
-	//arguments := strings.Join(runtime.Arguments, " ")
-	/*command := fmt.Sprintf("daemon -v -E /var/log/watchdog/%s-err.log -O /var/log/watchdog/%s-out.log "+
-		"-F /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
-		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments, runtime.Name)
-        */
-	// echo -n $! is used to get the pid, -n strips the breakline
-	command := "nohup tail -f /var/log/bootstrap.log >> hello.log 2> error.log & echo -n $!"
-	/*stdout, err := session.StdoutPipe()
-	if err != nil {
-		logger.Error("StdoutPipe() failed")
-		return nil, err
-	}*/
-
+	arguments := strings.Join(runtime.Arguments, " ")
+	command := fmt.Sprintf("nohup %s %s >> %s 2> %s & echo -n $!", runtime.Name, arguments,
+		runtime.Logs.Stdout, runtime.Logs.Stderr)
+	// command := "nohup tail -f /var/log/bootstrap.log >> hello.log 2> error.log & echo -n $!"
 
 	err = session.Run(command)
 	if err != nil {

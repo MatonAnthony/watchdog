@@ -15,6 +15,7 @@ import (
 	"strconv"
 	"errors"
 	"bytes"
+	"syscall"
 )
 
 var logger *zap.Logger
@@ -188,7 +189,7 @@ func PublicKeyFile(file string) ssh.AuthMethod {
 }
 
 func createSSHSession(server Target) (*ssh.Session, error) {
-var sshConfig ssh.ClientConfig
+	var sshConfig ssh.ClientConfig
 	if server.Auth.PrivateKey == "" && server.Auth.Password != "" {
 		logger.Warn("SSH Authentication for " + server.Hostname + " is using an unsafe authentication")
 		sshConfig = ssh.ClientConfig{
@@ -223,13 +224,15 @@ var sshConfig ssh.ClientConfig
 
 	return session, nil
 }
-func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
 
+func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
 	session, err := createSSHSession(server)
 	if err != nil {
 		logger.Fatal("Failed to obtain an SSH Session")
 		return nil, err
 	}
+	var buffer bytes.Buffer
+	session.Stdout = &buffer
 
 	// Create the command string
 	//arguments := strings.Join(runtime.Arguments, " ")
@@ -237,14 +240,14 @@ func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error
 		"-F /var/run/%s.pid %s %s -n %s && echo /var/run/%s.pid",
 		runtime.Name, runtime.Name, runtime.Name, runtime.Name, runtime.Executable, arguments, runtime.Name)
         */
+	// echo -n $! is used to get the pid, -n strips the breakline
 	command := "nohup tail -f /var/log/bootstrap.log >> hello.log 2> error.log & echo -n $!"
 	/*stdout, err := session.StdoutPipe()
 	if err != nil {
 		logger.Error("StdoutPipe() failed")
 		return nil, err
 	}*/
-	var buffer bytes.Buffer
-	session.Stdout = &buffer
+
 
 	err = session.Run(command)
 	if err != nil {
@@ -292,11 +295,58 @@ func createLogger(filepath string) *zap.Logger {
 
 	return logger
 }
-/*
+
 func shutdownAll() error {
+	var waiting sync.WaitGroup
 	for pid, process := range launchedProcess {
-		fmt.Printf("TODO")
+		waiting.Add(1)
+		go func(pid int, process StartedProcess){
+			defer waiting.Done()
+			command := fmt.Sprintf("kill -s 15 %d", pid)
+			session, err := createSSHSession(process.Server)
+			if err != nil {
+				logger.Error("Shutdown attempt failed on : " + pid + " - " + process.Server.Name)
+				return err
+			}
+			err = session.Run(command)
+			if err != nil {
+				logger.Error("Graceful shutdown attempt failed on : " + pid + " - "
+					+ process.Server.Name)
+				command := fmt.Sprintf("kill -s 9 %d", pid)
+				session, err := createSSHSession(process.Server)
+				if err != nil {
+					logger.Fatal("Shutdown attempt failed on : " + pid + " - "
+					+ process.Server.Name)
+					return err
+				}
+				err = session.Run(command)
+				if err != nil {
+					logger.Fatal("Non graceful shutdown attempt failed on : " + pid + " - "
+					+ process.Server.Name)
+					return err
+				}
+			}
+		}(pid, process)
 	}
+	waiting.Wait()
 	return nil;
 }
-*/
+
+// Signal the process using kill -s $SIGNAL $PID to signal the process
+// TODO: Also return stdout and stderr
+func signal(process StartedProcess, signal Signal) error {
+	command := fmt.Sprintf("kill -s %d %d", signal, process.Pid)
+	if process.Server.Name != "local" {
+		session, err := createSSHSession(process.Server)
+		if err != nil {
+			logger.Error("Failed to open a SSH session on : " + process.Server.Name)
+			return err
+		}
+		err = session.Run(command)
+		if err != nil {
+			logger.Error("Failed to send : " + pid + " - "  + process.Server.Name)
+			return err
+		}
+	}
+	return nil
+}

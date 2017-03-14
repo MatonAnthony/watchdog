@@ -296,37 +296,26 @@ func createLogger(filepath string) *zap.Logger {
 	return logger
 }
 
+// TODO Add error management
 func shutdownAll() error {
 	var waiting sync.WaitGroup
 	for pid, process := range launchedProcess {
 		waiting.Add(1)
-		go func(pid int, process StartedProcess){
+		 go func(process StartedProcess) error{
 			defer waiting.Done()
-			command := fmt.Sprintf("kill -s 15 %d", pid)
-			session, err := createSSHSession(process.Server)
+			err := signal(process, syscall.SIGTERM)
 			if err != nil {
-				logger.Error("Shutdown attempt failed on : " + pid + " - " + process.Server.Name)
-				return err
-			}
-			err = session.Run(command)
-			if err != nil {
-				logger.Error("Graceful shutdown attempt failed on : " + pid + " - "
+				logger.Error("Failed to kill properly " + process.Pid + " on "
 					+ process.Server.Name)
-				command := fmt.Sprintf("kill -s 9 %d", pid)
-				session, err := createSSHSession(process.Server)
+				err = signal(process, syscall.SIGKILL)
 				if err != nil {
-					logger.Fatal("Shutdown attempt failed on : " + pid + " - "
-					+ process.Server.Name)
-					return err
-				}
-				err = session.Run(command)
-				if err != nil {
-					logger.Fatal("Non graceful shutdown attempt failed on : " + pid + " - "
-					+ process.Server.Name)
+					logger.Error("Failed to kill abruptely " + process.Pid + " on "
+						+ process.Server.Name)
 					return err
 				}
 			}
-		}(pid, process)
+		}(process)
+
 	}
 	waiting.Wait()
 	return nil;

@@ -83,6 +83,7 @@ func main() {
 						killAll()
 						os.Exit(1)
 					}
+					logger.Info("Local process started")
 					launchedProcess[started.Pid] = started
 				} else {
 					started, err := processus.RunRemoteProcess(targetMap[processus.Target])
@@ -91,26 +92,26 @@ func main() {
 						killAll()
 						os.Exit(1)
 					}
+					logger.Info("Remote process started")
 					launchedProcess[started.Pid] = *started
 				}
 			}(processus)
 		}
 	}
 
+	waiting.Wait()
 	setupWatcher()
 
-	// Setup a trap on CTRL + C which call killAll()
+	// Setup a trap on CTRL + C and on CTRL + D which call killAll()
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 
-	waiting.Add(1)
 	go func() {
-		defer waiting.Done()
 		<-sigs
 		killAll()
 		os.Exit(1)
 	}()
-
+	waiting.Add(1)
 	waiting.Wait()
 }
 
@@ -120,6 +121,7 @@ func watch(processName string, frequency int, onTick func(process.StartedProcess
 
 	for _, processus := range launchedProcess {
 		if processName == processus.Name {
+			logger.Info("Add watcher on " + processName)
 			go processus.Watch(frequency, onTick, onCrash)
 		}
 	}
@@ -154,6 +156,7 @@ func createLogger(filepath string) *zap.Logger {
 
 // Place to write the watcher code and condition
 func setupWatcher() {
+	logger.Info("Starting watcher setup")
 	// Example
 	watch("tail", 5000, func(process.StartedProcess) (string, error){
 		fmt.Println("Tick - Tack")

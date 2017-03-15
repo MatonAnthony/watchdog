@@ -31,12 +31,13 @@ type StartedProcess struct {
 	Server Target     `json:"server"`
 	Pid int           `json:"pid"`
 	Logs Logs         `json:"logs`
+	Name string       `json:"name"`
 }
 
 type Target struct {
-	Auth Auth `json:"auth"`
+	Auth Auth       `json:"auth"`
 	Hostname string `json:"hostname"`
-	Name string `json:"name"`
+	Name string     `json:"name"`
 	Port     int    `json:"port"`
 	Username string `json:"username"`
 }
@@ -52,7 +53,7 @@ type Logs struct {
 }
 
 // Create and Run a Process locally and return a startedProcess
-func RunProcess(executable, stdoutLogfile, stderrLogfile string, arguments... string) (StartedProcess, error) {
+func RunProcess(executable, stdoutLogfile, stderrLogfile, name string, arguments... string) (StartedProcess, error) {
 	var waiting sync.WaitGroup
 	var empty StartedProcess
 	stderrLogger := createLogger(stderrLogfile)
@@ -112,6 +113,7 @@ func RunProcess(executable, stdoutLogfile, stderrLogfile string, arguments... st
 			Stdout: stdoutLogfile,
 			Stderr: stderrLogfile,
 		},
+		Name: name,
 	}, nil
 }
 
@@ -152,6 +154,7 @@ func (runtime Process) RunRemoteProcess(server Target) (*StartedProcess, error) 
 			Stdout: runtime.Logs.Stdout,
 			Stderr: runtime.Logs.Stderr,
 		},
+		Name: runtime.Name,
 	}, nil
 
 }

@@ -17,6 +17,7 @@ import (
 var logger *zap.Logger
 var configuration Config
 var targetMap map[string]process.Target
+var loadedProcess map[string]process.Process
 var launchedProcess map[int]process.StartedProcess
 
 type Process process.Process
@@ -47,6 +48,11 @@ func initializeConfig() {
 	for _, target := range configuration.Targets {
 		targetMap[target.Name] = target
 	}
+
+	loadedProcess = make(map[string]process.Process)
+	for _, process := range configuration.Processes {
+		loadedProcess[process.Name] = process
+	}
 }
 
 func main() {
@@ -65,16 +71,23 @@ func main() {
 			go func(processus process.Process){
 				defer waiting.Done()
 				if processus.Target == "local" {
-					process.RunProcess(
+					started, err := process.RunProcess(
 						processus.Executable,
 						processus.Logs.Stdout,
 						processus.Logs.Stderr,
+						processus.Name,
 						processus.Arguments...
 					)
+					if err != nil {
+						logger.Fatal("Unable to create local process")
+						killAll()
+						os.Exit(1)
+					}
+					launchedProcess[started.Pid] = started
 				} else {
 					started, err := processus.RunRemoteProcess(targetMap[processus.Target])
 					if err != nil {
-						logger.Fatal("Unable to create process")
+						logger.Fatal("Unable to create remote process")
 						killAll()
 						os.Exit(1)
 					}
@@ -84,9 +97,11 @@ func main() {
 		}
 	}
 
+	setupWatcher()
+
 	// Setup a trap on CTRL + C which call killAll()
 	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 
 	waiting.Add(1)
 	go func() {
@@ -97,6 +112,17 @@ func main() {
 	}()
 
 	waiting.Wait()
+}
+
+// Set a watcher on every occurence of this process
+func watch(processName string, frequency int, onTick func(process.StartedProcess) (string, error),
+	onCrash func(*process.StartedProcess) error) {
+
+	for _, processus := range launchedProcess {
+		if processName == processus.Name {
+			go processus.Watch(frequency, onTick, onCrash)
+		}
+	}
 }
 
 // Kill every process started by the watchdog
@@ -124,4 +150,16 @@ func createLogger(filepath string) *zap.Logger {
 		os.Exit(-1)
 	}
 	return logger
+}
+
+// Place to write the watcher code and condition
+func setupWatcher() {
+	// Example
+	watch("tail", 5000, func(process.StartedProcess) (string, error){
+		fmt.Println("Tick - Tack")
+		return "", nil
+	}, func(*process.StartedProcess) (error){
+		fmt.Println("Oops crashed")
+		return nil
+	})
 }

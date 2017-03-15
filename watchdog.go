@@ -4,57 +4,26 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"os"
-	"os/exec"
 	"sync"
-	"bufio"
 	"time"
 	"encoding/json"
 	"io/ioutil"
-	"golang.org/x/crypto/ssh"
-	"strings"
 	"strconv"
-	"errors"
-	"bytes"
 	"syscall"
+	"watchdog/process"
+	"os/signal"
 )
 
 var logger *zap.Logger
 var configuration Config
-var targetMap map[string]Target
-var launchedProcess map[int]StartedProcess
+var targetMap map[string]process.Target
+var launchedProcess map[int]process.StartedProcess
 
+type Process process.Process
 // Structure obtained via jsonutil
 type Config struct {
-	Processes []Process `json:"processes"`
-	Targets   []Target  `json:"target"`
-}
-type Logs struct {
-	Stdout string `json:"stdout"`
-	Stderr string `json:"stderr"`
-}
-type Process struct {
-	Name string         `json:"name"`
-	Arguments  []string `json:"arguments"`
-	Target string       `json:"target"`
-	Executable string   `json:"executable"`
-	Logs Logs           `json:"logs"`
-	Number int          `json:"number"`
-}
-type StartedProcess struct {
-	Executable string `json:"executable`
-	Server Target     `json:"server"`
-	Pid int           `json:"pid"`
-	Logs Logs         `json:"logs`
-}
-type Target struct {
-	Auth struct {
-		Password   string      `json:"password"`
-		PrivateKey string      `json:"private-key"`
-	} `json:"auth"`
-	Hostname string `json:"hostname"`
-	Name string `json:"name"`
-	Port     int    `json:"port"`
-	Username string `json:"username"`
+	Processes []process.Process `json:"processes"`
+	Targets   []process.Target  `json:"target"`
 }
 
 // Initialize the global logger
@@ -65,7 +34,7 @@ func initializeLogger() {
 
 // Load the configuration file and initialize top level variables
 func initializeConfig() {
-	launchedProcess = make(map[int]StartedProcess)
+	launchedProcess = make(map[int]process.StartedProcess)
 	configfile, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		logger.Fatal("Unable to open configuration file")
@@ -74,8 +43,7 @@ func initializeConfig() {
 	json.Unmarshal(configfile, &configuration)
 
 	// Convert my JSON array into a map to avoid multiple array walkthrough
-	targetMap = make(map[string]Target)
-	fmt.Printf("%+v", configuration)
+	targetMap = make(map[string]process.Target)
 	for _, target := range configuration.Targets {
 		targetMap[target.Name] = target
 	}
@@ -88,189 +56,62 @@ func main() {
 	initializeConfig()
 
 	// Launch every Command loaded from the config file in a separate goroutine.
-	for _, process := range configuration.Processes {
-		for i := 0; i < process.Number; i++ {
+	for _, processus := range configuration.Processes {
+		for i := 0; i < processus.Number; i++ {
 			waiting.Add(1)
 			// This goroutine takes this as a parameter due to the stack
 			// architecture to prevent stack overwriting of this
 			// variable
-			go func(process Process){
+			go func(processus process.Process){
 				defer waiting.Done()
-				if process.Target == "local" {
-					createProcess(
-						process.Executable,
-						process.Logs.Stdout,
-						process.Logs.Stderr,
-						process.Arguments...
+				if processus.Target == "local" {
+					process.RunProcess(
+						processus.Executable,
+						processus.Logs.Stdout,
+						processus.Logs.Stderr,
+						processus.Arguments...
 					)
 				} else {
-					started, err := createRemoteProcess(process, targetMap[process.Target])
+					started, err := processus.RunRemoteProcess(targetMap[processus.Target])
 					if err != nil {
 						logger.Fatal("Unable to create process")
-						// TODO add a shutdown process that kills all existing process
+						killAll()
 						os.Exit(1)
 					}
 					launchedProcess[started.Pid] = *started
 				}
-			}(process)
+			}(processus)
 		}
 	}
+
+	// Setup a trap on CTRL + C which call killAll()
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
+	waiting.Add(1)
+	go func() {
+		defer waiting.Done()
+		<-sigs
+		killAll()
+		os.Exit(1)
+	}()
 
 	waiting.Wait()
 }
 
-// Create a new Process and keep it running even if the watchdog is killed
-func createProcess(executable, stdoutLogfile, stderrLogfile string, arguments ...string) error {
-	var waiting sync.WaitGroup
-	stderr_logger := createLogger(stderrLogfile)
-	stdout_logger := createLogger(stdoutLogfile)
-	command := exec.Command(executable, arguments...)
-	stderr, err := command.StderrPipe()
-	if err != nil {
-		logger.Error("createProcess() impossible to pipe stderr")
-		return err
-	}
-	stdout, err := command.StdoutPipe()
-	if err != nil {
-		logger.Error("createProcess() impossible to pipe stdout")
-		return err
-	}
-
-	if err := command.Start(); err != nil {
-		logger.Fatal("createProcess() impossible to create the Queue")
-		return err
-	}
-
-	// Goroutine to log stdout
-	waiting.Add(1)
-	go func(){
-		defer waiting.Done()
-		scanner := bufio.NewScanner(stdout)
-		for scanner.Scan() {
-			stdout_logger.Info(scanner.Text())
-		}
-	}()
-	waiting.Add(1)
-
-	// Goroutine to log stderr
-	go func(){
-		defer waiting.Done()
-		scanner := bufio.NewScanner(stderr)
-		for scanner.Scan() {
-			stderr_logger.Info(scanner.Text())
-		}
-	}()
-
-	if err := command.Wait(); err != nil {
-		logger.Error("Processus : " + executable + "crashed")
-		logger.Error("Relaunching attempt")
-		err := createProcess(executable, stdoutLogfile, stderrLogfile, arguments...)
+// Kill every process started by the watchdog
+func killAll() error {
+	var err error
+	for index, process := range launchedProcess {
+		err = process.Kill()
 		if err != nil {
-			logger.Fatal("Recovery attempt failed for "+ executable)
+			logger.Error("Failed to kill properly " + strconv.Itoa(process.Pid) + " on " +
+				process.Server.Name)
 			return err
 		}
+		delete(launchedProcess, index)
 	}
-	waiting.Wait()
-	return nil;
-}
-
-// Utility functions to read the PrivateKey file
-func PublicKeyFile(file string) ssh.AuthMethod {
-	buffer, err := ioutil.ReadFile(file)
-	if err != nil {
-		return nil
-	}
-
-	key, err := ssh.ParsePrivateKey(buffer)
-	if err != nil {
-		return nil
-	}
-	return ssh.PublicKeys(key)
-}
-
-func createSSHSession(server Target) (*ssh.Session, error) {
-	var sshConfig ssh.ClientConfig
-	if server.Auth.PrivateKey == "" && server.Auth.Password != "" {
-		logger.Warn("SSH Authentication for " + server.Hostname + " is using an unsafe authentication")
-		sshConfig = ssh.ClientConfig{
-			User: server.Username,
-			Auth: []ssh.AuthMethod{
-				ssh.Password(server.Auth.Password),
-			},
-		}
-	} else if server.Auth.Password == "" && server.Auth.PrivateKey != "" {
-		sshConfig = ssh.ClientConfig{
-			User: server.Username,
-			Auth: []ssh.AuthMethod{
-				PublicKeyFile(server.Auth.PrivateKey),
-			},
-		}
-	} else {
-		logger.Error("Provided target credentials are incomplete")
-		return nil, errors.New("Provided target credentials are incomplete")
-	}
-
-	// Establish the connection
-	connection, err := ssh.Dial("tcp", "" + server.Hostname + ":" + strconv.Itoa(server.Port), &sshConfig)
-	if err != nil {
-		logger.Error("Impossible to establish the connection")
-		return nil, err
-	}
-	session, err := connection.NewSession()
-	if err != nil {
-		logger.Error("Impossible to establish the connection")
-		return nil, err
-	}
-
-	return session, nil
-}
-
-func createRemoteProcess(runtime Process, server Target) (*StartedProcess, error) {
-	session, err := createSSHSession(server)
-	if err != nil {
-		logger.Fatal("Failed to obtain an SSH Session")
-		return nil, err
-	}
-	var buffer bytes.Buffer
-	session.Stdout = &buffer
-
-	// Create the command string
-	arguments := strings.Join(runtime.Arguments, " ")
-	command := fmt.Sprintf("nohup %s %s >> %s 2> %s & echo -n $!", runtime.Name, arguments,
-		runtime.Logs.Stdout, runtime.Logs.Stderr)
-	// command := "nohup tail -f /var/log/bootstrap.log >> hello.log 2> error.log & echo -n $!"
-
-	err = session.Run(command)
-	if err != nil {
-		logger.Error("Command failed")
-		return nil, err
-	}
-	if err != nil {
-		logger.Error("Impossible to read the buffer")
-		return nil, err
-	}
-	if err != nil {
-		fmt.Println(buffer)
-		logger.Error("Impossible to convert the buffer to int")
-		return nil, err
-	}
-
-	output := buffer.String()
-	pid, err := strconv.Atoi(output)
-	if err != nil {
-		logger.Error("Unexpected output : " + output)
-		return nil, err
-	}
-
-	return &StartedProcess{
-		Executable: runtime.Executable,
-		Server: server,
-		Pid: pid,
-		Logs: Logs {
-			Stdout: runtime.Name + "-out.log",
-			Stderr: runtime.Name + "-err.log",
-		},
-	}, nil
+	return nil
 }
 
 // Create a Logger writing to the path specified in parameter
@@ -282,91 +123,5 @@ func createLogger(filepath string) *zap.Logger {
 		fmt.Fprintf(os.Stderr, "Logger instantiation error")
 		os.Exit(-1)
 	}
-	logger.Info("New logger created -> " + filepath)
-
 	return logger
-}
-
-// TODO Add error management
-func shutdownAll() error {
-	var waiting sync.WaitGroup
-	for _, process := range launchedProcess {
-		waiting.Add(1)
-		 go func(process StartedProcess) {
-			defer waiting.Done()
-			err := signal(process, syscall.SIGTERM)
-			if err != nil {
-				logger.Error("Failed to kill properly " + strconv.Itoa(process.Pid) + " on " +
-					process.Server.Name)
-				err = signal(process, syscall.SIGKILL)
-				if err != nil {
-					logger.Error("Failed to kill abruptely " + strconv.Itoa(process.Pid) +
-						" on " + process.Server.Name)
-				}
-			}
-		}(process)
-
-	}
-	waiting.Wait()
-	return nil;
-}
-
-// Signal the process using kill -s $SIGNAL $PID to signal the process
-// TODO: Also return stdout and stderr
-func signal(process StartedProcess, signal syscall.Signal) error {
-	if process.Server.Name != "local" {
-		command := fmt.Sprintf("kill -s %d %d", signal, process.Pid)
-		session, err := createSSHSession(process.Server)
-		if err != nil {
-			logger.Error("Failed to open a SSH session on : " + process.Server.Name)
-			return err
-		}
-		err = session.Run(command)
-		if err != nil {
-			logger.Error("Failed to send signal " + signal.String() + " to " +
-				strconv.Itoa(process.Pid) + " - " + process.Server.Name)
-			return err
-		}
-	} else {
-		// We are on the local machine so we need a specific treatment
-		executable := "/bin/kill"
-		arguments := []string{"-s", signal.String(), strconv.Itoa(process.Pid)}
-		command := exec.Command(executable, arguments...)
-		if err := command.Start(); err != nil {
-			logger.Error("Failed to send signal" + signal.String() + " to " +
-				strconv.Itoa(process.Pid) + " - " + process.Server.Name)
-			return err
-		}
-	}
-	return nil
-}
-
-// Execute the function passed in parameter at the define frequency (in millisecond) on the given process
-// Go count in nanosecond but we multiply by time.Millisecond
-func watch(process StartedProcess, frequency int, onTick func(StartedProcess) (string, error),
-	onCrash func(StartedProcess) error) error {
-
-	if(frequency <= 0) {
-		return errors.New("Illegal Argument frequency must be greater than 0")
-	}
-
-	ticker := time.NewTicker(time.Duration(frequency) * time.Millisecond)
-	// We don't care about the channel content, the signal emitted when the channel is closed is what we
-	// are after
-	quit := make(chan(struct{}))
-	go func() {
-		for {
-			select {
-			case <- ticker.C:
-				_, err := onTick(process)
-				if err != nil {
-					onCrash(process)
-				}
-			case <- quit:
-				ticker.Stop()
-				return
-			}
-		}
-	}()
-	return nil
 }

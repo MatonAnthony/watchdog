@@ -17,6 +17,7 @@ import (
 	"io/ioutil"
 )
 
+// Process define how to launch a processus
 type Process struct {
 	Name string         `json:"name"`
 	Arguments  []string `json:"arguments"`
@@ -25,7 +26,7 @@ type Process struct {
 	Logs Logs           `json:"logs"`
 	Number int          `json:"number"`
 }
-
+// StartedProcess define a started process
 type StartedProcess struct {
 	Executable string `json:"executable`
 	Server Target     `json:"server"`
@@ -33,7 +34,7 @@ type StartedProcess struct {
 	Logs Logs         `json:"logs`
 	Name string       `json:"name"`
 }
-
+// Target define where the process is started
 type Target struct {
 	Auth Auth       `json:"auth"`
 	Hostname string `json:"hostname"`
@@ -41,12 +42,12 @@ type Target struct {
 	Port     int    `json:"port"`
 	Username string `json:"username"`
 }
-
+// Auth define what's needed to connect to the Target
 type Auth struct {
 	Password   string `json:"password"`
 	PrivateKey string `json:"private-key"`
 }
-
+// Define where log should be stored for each output
 type Logs struct {
 	Stdout string `json:"stdout"`
 	Stderr string `json:"stderr"`
@@ -120,6 +121,7 @@ func RunProcess(executable, stdoutLogfile, stderrLogfile, name string, arguments
 //------------------------------------------------------------------------------
 // Process type functions (non exported)
 //------------------------------------------------------------------------------
+
 // Run a Process on a remote server
 func (runtime Process) RunRemoteProcess(server Target) (*StartedProcess, error) {
 	session, err := createSSHSession(server)

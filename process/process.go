@@ -13,7 +13,6 @@ import (
 	"syscall"
 	"time"
 	"strings"
-	"os"
 	"io/ioutil"
 )
 
@@ -57,8 +56,8 @@ type Logs struct {
 func RunProcess(executable, stdoutLogfile, stderrLogfile, name string, arguments... string) (StartedProcess, error) {
 	var waiting sync.WaitGroup
 	var empty StartedProcess
-	stderrLogger := createLogger(stderrLogfile)
-	stdoutLogger := createLogger(stdoutLogfile)
+	stderrLogger, err := createLogger(stderrLogfile)
+	stdoutLogger, err := createLogger(stdoutLogfile)
 	command := exec.Command(executable, arguments...)
 	stderr, err := command.StderrPipe()
 	if err != nil {
@@ -92,7 +91,8 @@ func RunProcess(executable, stdoutLogfile, stderrLogfile, name string, arguments
 	}()
 
 	if err := command.Wait(); err != nil {
-		return empty, errors.New("CreateProcess() Failed to create process for " + executable)
+		//return empty, errors.New("CreateProcess() Failed to create process for " + executable)
+		return empty, err
 	}
 
 	waiting.Wait()
@@ -133,9 +133,7 @@ func (runtime Process) RunRemoteProcess(server Target) (*StartedProcess, error) 
 	session.Stdout = &buffer
 
 	// Create the command string
-	arguments := strings.Join(runtime.Arguments, " ")
-	command := fmt.Sprintf("nohup %s %s >> %s 2> %s & echo -n $!", runtime.Name, arguments, runtime.Logs.Stdout,
-		runtime.Logs.Stderr)
+	command := createCommand(runtime.Executable, runtime.Arguments, runtime.Logs)
 
 	err = session.Run(command)
 	if err != nil {
@@ -160,10 +158,8 @@ func (runtime Process) RunRemoteProcess(server Target) (*StartedProcess, error) 
 	}, nil
 
 }
-
-
 //------------------------------------------------------------------------------
-// StartedProcess type functions (non exported)
+// StartedProcess type functions
 //------------------------------------------------------------------------------
 
 // Send a signal to a specific process
@@ -192,7 +188,6 @@ func (process StartedProcess) Signal(signal syscall.Signal) error {
 
 // Execute the function passed in parameter at the define frequency (in millisecond) on the given process
 // Go count in nanosecond but we multiply by time.Millisecond
-// TODO Solve the error passing issue
 func (process StartedProcess) Watch(frequency int, onTick func(StartedProcess) (string, error),
 	onCrash func(*StartedProcess) error) error {
 
@@ -228,15 +223,14 @@ func (process StartedProcess) Kill() error {
 //------------------------------------------------------------------------------
 
 // Create a Logger writing to the path specified in parameter
-func createLogger(filepath string) *zap.Logger {
+func createLogger(filepath string) (*zap.Logger, error) {
 	cfg := zap.NewProductionConfig()
 	cfg.OutputPaths = []string{filepath}
 	logger, err := cfg.Build()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Logger instantiation error")
-		os.Exit(-1)
+		return nil, err
 	}
-	return logger
+	return logger, nil
 }
 
 func createSSHSession(server Target) (*ssh.Session, error) {
@@ -283,4 +277,15 @@ func publicKeyFile(file string) ssh.AuthMethod {
 	}
 	return ssh.PublicKeys(key)
 
+}
+
+// Create the command to run from given data
+func createCommand(executable string, arguments []string, logs Logs) string {
+	args := strings.Join(arguments, " ")
+	command := fmt.Sprintf("nohup %s %s >> %s 2> %s & echo -n $!",
+		executable,
+		args,
+		logs.Stdout,
+		logs.Stderr)
+	return command
 }

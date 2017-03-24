@@ -166,14 +166,15 @@ func (runtime Process) RunRemoteProcess(server Target) (*StartedProcess, error) 
 // TODO Get stdout and stderr
 func (process StartedProcess) Signal(signal syscall.Signal) error {
 	if process.Server.Name != "local" {
-		command := fmt.Sprintf("kill -s %d %d", signal, process.Pid)
+		command := fmt.Sprintf("strace kill -s %d %d &> strace.log", signal, process.Pid)
 		session, err := createSSHSession(process.Server)
 		if err != nil {
 			return errors.New("Failed to create SSH Session (send signal)")
 		}
 		err = session.Run(command)
 		if err != nil {
-			return errors.New("Failed to Run command (send signal)")
+			//return errors.New("Failed to Run command (send signal)")
+			return err
 		}
 	} else {
 		executable := "/bin/kill"

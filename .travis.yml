@@ -1,0 +1,30 @@
+sudo: required
+language: go
+
+go:
+  - 1.8
+
+services:
+  - docker
+
+before_install:
+  - echo "=== BUILDING VMs ENVIRONNEMENT ==="
+  - cd process/vms
+  - echo "Building NoSSHShell"
+  - docker build -f NoSSHShell -t process:no-shell .
+  - echo "Building SSHServer"
+  - docker build -f SSHServer -t process:ssh .
+  - echo "Building SSHServerKey"
+  - docker build -f SSHServerKey -t process:ssh-key .
+  - echo "Starting containers"
+  - docker run --security-opt seccomp:unconfined -p 9999:22 process:no-shell &
+  - docker run --security-opt seccomp:unconfined -p 10000:22 process:ssh &
+  - docker run --security-opt seccomp:unconfined -p 10001:22 process:ssh-key &
+  - echo "=== SETUP GO DEPENDENCIES ==="
+  - cd .. && go get
+  - echo "Create the necessary locked file"
+  - touch vms/locked.log && chmod -w vms/locked.log
+
+script:
+  - go test -coverprofile=cover.out -v
+

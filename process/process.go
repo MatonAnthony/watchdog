@@ -169,11 +169,11 @@ func (process StartedProcess) Signal(signal syscall.Signal) error {
 		command := fmt.Sprintf("kill -s %d %d", signal, process.Pid)
 		session, err := createSSHSession(process.Server)
 		if err != nil {
-			return errors.New("Failed to send signal")
+			return errors.New("Failed to create SSH Session (send signal)")
 		}
 		err = session.Run(command)
 		if err != nil {
-			return errors.New("Failed to send signal")
+			return errors.New("Failed to Run command (send signal)")
 		}
 	} else {
 		executable := "/bin/kill"

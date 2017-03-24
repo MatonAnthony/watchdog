@@ -1,0 +1,2 @@
+{"level":"info","ts":1490184264.7092,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"/bin/ls: illegal option --  "}
+{"level":"info","ts":1490184264.7093866,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]"}

@@ -1,0 +1,531 @@
+{"level":"info","ts":1490184280.0427418,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"/bin/ls: illegal option --  "}
+{"level":"info","ts":1490184280.0428753,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]"}
+{"level":"info","ts":1490184526.5122797,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"total 40"}
+{"level":"info","ts":1490184526.5127552,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 13:08 ."}
+{"level":"info","ts":1490184526.5127919,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490184526.512834,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  2601 22 mar 13:08 cover.out"}
+{"level":"info","ts":1490184526.5128682,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  7373 22 mar 12:51 process.go"}
+{"level":"info","ts":1490184526.51288,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  6563 22 mar 13:08 process_test.go"}
+{"level":"info","ts":1490184526.51289,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490184557.949128,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 40"}
+{"level":"info","ts":1490184557.949696,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 13:09 ."}
+{"level":"info","ts":1490184557.949731,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490184557.949746,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2601 22 mar 13:08 cover.out"}
+{"level":"info","ts":1490184557.9497557,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7312 22 mar 13:09 process.go"}
+{"level":"info","ts":1490184557.9497652,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  6563 22 mar 13:08 process_test.go"}
+{"level":"info","ts":1490184557.9497745,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490187440.7988963,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 40"}
+{"level":"info","ts":1490187440.7994018,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 13:57 ."}
+{"level":"info","ts":1490187440.7994316,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490187440.7994468,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2601 22 mar 13:09 cover.out"}
+{"level":"info","ts":1490187440.7994597,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490187440.7994685,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7052 22 mar 13:57 process_test.go"}
+{"level":"info","ts":1490187440.7994812,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490188011.4222186,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 40"}
+{"level":"info","ts":1490188011.422685,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 14:06 ."}
+{"level":"info","ts":1490188011.4227104,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490188011.422725,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 13:57 cover.out"}
+{"level":"info","ts":1490188011.42275,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490188011.4227598,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7686 22 mar 14:06 process_test.go"}
+{"level":"info","ts":1490188011.4227724,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490188103.524579,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 40"}
+{"level":"info","ts":1490188103.5250154,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 14:06 ."}
+{"level":"info","ts":1490188103.5250401,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490188103.5251088,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:06 cover.out"}
+{"level":"info","ts":1490188103.5251231,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490188103.525134,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7686 22 mar 14:06 process_test.go"}
+{"level":"info","ts":1490188103.5251465,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190466.6554503,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 48"}
+{"level":"info","ts":1490190466.6561787,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 14:47 ."}
+{"level":"info","ts":1490190466.656244,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190466.6562624,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:08 cover.out"}
+{"level":"info","ts":1490190466.6562707,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490190466.6562786,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8300 22 mar 14:47 process_test.go"}
+{"level":"info","ts":1490190466.6562903,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190520.9029882,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 64"}
+{"level":"info","ts":1490190520.9034638,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   9 anthony  staff   306 22 mar 14:48 ."}
+{"level":"info","ts":1490190520.9035037,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"lrwxr-xr-x   1 anthony  staff    44 22 mar 14:48 .#process_test.go -> anthony@MacBook-Air-de-Anthony-2.local.17562"}
+{"level":"info","ts":1490190520.9035213,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190520.9035344,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:47 cover.out"}
+{"level":"info","ts":1490190520.9035473,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   159 22 mar 14:47 err.log"}
+{"level":"info","ts":1490190520.9035895,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190520.9035974,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490190520.9036162,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8345 22 mar 14:48 process_test.go"}
+{"level":"info","ts":1490190520.9036233,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190571.116254,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190571.1166933,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:49 ."}
+{"level":"info","ts":1490190571.116711,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190571.11672,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:48 cover.out"}
+{"level":"info","ts":1490190571.1167972,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   319 22 mar 14:48 err.log"}
+{"level":"info","ts":1490190571.1168118,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190571.116823,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490190571.1168284,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8336 22 mar 14:49 process_test.go"}
+{"level":"info","ts":1490190571.116836,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190615.7968707,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190615.7974586,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:50 ."}
+{"level":"info","ts":1490190615.7975533,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190615.7975864,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:49 cover.out"}
+{"level":"info","ts":1490190615.7975984,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   479 22 mar 14:49 err.log"}
+{"level":"info","ts":1490190615.7976093,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190615.7976193,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490190615.7976263,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8345 22 mar 14:50 process_test.go"}
+{"level":"info","ts":1490190615.7976365,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190631.3514924,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190631.3520064,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:50 ."}
+{"level":"info","ts":1490190631.3520348,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190631.3520455,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:50 cover.out"}
+{"level":"info","ts":1490190631.352055,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   791 22 mar 14:50 err.log"}
+{"level":"info","ts":1490190631.3520646,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190631.3520825,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7486 22 mar 13:54 process.go"}
+{"level":"info","ts":1490190631.3520896,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8336 22 mar 14:50 process_test.go"}
+{"level":"info","ts":1490190631.3520992,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190687.2631125,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190687.2636306,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:51 ."}
+{"level":"info","ts":1490190687.2636616,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190687.263679,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:50 cover.out"}
+{"level":"info","ts":1490190687.2636926,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  1095 22 mar 14:50 err.log"}
+{"level":"info","ts":1490190687.2637064,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190687.263715,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190687.2637284,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8336 22 mar 14:50 process_test.go"}
+{"level":"info","ts":1490190687.263738,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190707.5480201,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190707.5481818,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:51 ."}
+{"level":"info","ts":1490190707.5481977,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190707.54821,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:51 cover.out"}
+{"level":"info","ts":1490190707.548221,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  1397 22 mar 14:51 err.log"}
+{"level":"info","ts":1490190707.548229,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190707.5482364,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190707.5482478,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8340 22 mar 14:51 process_test.go"}
+{"level":"info","ts":1490190707.5482593,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190759.7840955,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190759.7842548,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:52 ."}
+{"level":"info","ts":1490190759.7842755,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190759.7842903,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:51 cover.out"}
+{"level":"info","ts":1490190759.7843049,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  1701 22 mar 14:51 err.log"}
+{"level":"info","ts":1490190759.7843351,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190759.7843525,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190759.7843673,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8337 22 mar 14:52 process_test.go"}
+{"level":"info","ts":1490190759.7843802,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190793.9292343,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190793.9294207,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:53 ."}
+{"level":"info","ts":1490190793.9294324,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190793.9294405,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:52 cover.out"}
+{"level":"info","ts":1490190793.9294486,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2005 22 mar 14:52 err.log"}
+{"level":"info","ts":1490190793.9294565,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190793.9294643,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190793.9294696,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8321 22 mar 14:53 process_test.go"}
+{"level":"info","ts":1490190793.9294777,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190829.5580623,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190829.5584857,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:53 ."}
+{"level":"info","ts":1490190829.5585191,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190829.5585306,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:53 cover.out"}
+{"level":"info","ts":1490190829.5585408,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2308 22 mar 14:53 err.log"}
+{"level":"info","ts":1490190829.5585506,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190829.5585594,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190829.558569,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8324 22 mar 14:53 process_test.go"}
+{"level":"info","ts":1490190829.5585783,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490190925.6877167,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490190925.6883361,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 14:55 ."}
+{"level":"info","ts":1490190925.6883707,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490190925.6883886,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:53 cover.out"}
+{"level":"info","ts":1490190925.6884181,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2452 22 mar 14:53 err.log"}
+{"level":"info","ts":1490190925.6885157,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490190925.6885345,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490190925.68855,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8317 22 mar 14:55 process_test.go"}
+{"level":"info","ts":1490190925.6885588,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490191355.0728116,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490191355.0732827,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:02 ."}
+{"level":"info","ts":1490191355.073338,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490191355.0733917,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 14:55 cover.out"}
+{"level":"info","ts":1490191355.0734155,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2596 22 mar 14:55 err.log"}
+{"level":"info","ts":1490191355.07343,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490191355.0734437,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490191355.0734584,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8326 22 mar 15:02 process_test.go"}
+{"level":"info","ts":1490191355.073604,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490191398.7188437,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 56"}
+{"level":"info","ts":1490191398.7193065,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:03 ."}
+{"level":"info","ts":1490191398.719433,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490191398.7194629,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:02 cover.out"}
+{"level":"info","ts":1490191398.719477,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490191398.7194839,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff     0 22 mar 14:47 out.log"}
+{"level":"info","ts":1490191398.7194946,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490191398.7195013,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8330 22 mar 15:03 process_test.go"}
+{"level":"info","ts":1490191398.719508,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490191541.3015134,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 64"}
+{"level":"info","ts":1490191541.3020587,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:05 ."}
+{"level":"info","ts":1490191541.3020961,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490191541.3021283,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:02 cover.out"}
+{"level":"info","ts":1490191541.3021436,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490191541.302158,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2857 22 mar 15:03 out.log"}
+{"level":"info","ts":1490191541.302172,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490191541.3021808,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8341 22 mar 15:05 process_test.go"}
+{"level":"info","ts":1490191541.3021934,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490191554.8788872,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 64"}
+{"level":"info","ts":1490191554.879343,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:05 ."}
+{"level":"info","ts":1490191554.8793702,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490191554.8794854,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:05 cover.out"}
+{"level":"info","ts":1490191554.8794975,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490191554.8795063,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2857 22 mar 15:03 out.log"}
+{"level":"info","ts":1490191554.8795185,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490191554.8795235,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8330 22 mar 15:05 process_test.go"}
+{"level":"info","ts":1490191554.8795285,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490191997.8377047,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490191997.8382564,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:13 ."}
+{"level":"info","ts":1490191997.8382843,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490191997.8383048,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:05 cover.out"}
+{"level":"info","ts":1490191997.8383245,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490191997.8383496,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490191997.8383636,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490191997.8383765,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8407 22 mar 15:13 process_test.go"}
+{"level":"info","ts":1490191997.8383925,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490193761.622096,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490193761.6225116,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 15:42 ."}
+{"level":"info","ts":1490193761.6225498,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490193761.6225636,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:13 cover.out"}
+{"level":"info","ts":1490193761.6225748,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490193761.622582,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490193761.622589,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490193761.6226006,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8824 22 mar 15:42 process_test.go"}
+{"level":"info","ts":1490193761.6226113,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490195454.0013318,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490195454.0019162,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:10 ."}
+{"level":"info","ts":1490195454.002057,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490195454.002094,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 15:42 cover.out"}
+{"level":"info","ts":1490195454.0021107,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490195454.0021238,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490195454.0021312,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490195454.002144,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9204 22 mar 16:10 process_test.go"}
+{"level":"info","ts":1490195454.0021565,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490196915.665542,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490196915.666044,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:27 ."}
+{"level":"info","ts":1490196915.6660688,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490196915.6660845,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:10 cover.out"}
+{"level":"info","ts":1490196915.6662192,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490196915.6662374,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490196915.6662467,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490196915.66626,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9205 22 mar 16:27 process_test.go"}
+{"level":"info","ts":1490196915.6662724,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490197357.3431954,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490197357.343669,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:38 ."}
+{"level":"info","ts":1490197357.3437014,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490197357.3437176,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:35 cover.out"}
+{"level":"info","ts":1490197357.3437316,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490197357.3437471,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490197357.3437564,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490197357.3437703,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8896 22 mar 16:38 process_test.go"}
+{"level":"info","ts":1490197357.3437843,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490197592.22109,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490197592.2214818,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:46 ."}
+{"level":"info","ts":1490197592.2215,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490197592.2215135,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:42 cover.out"}
+{"level":"info","ts":1490197592.221524,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490197592.2215345,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490197592.2215407,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490197592.2215502,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9384 22 mar 16:46 process_test.go"}
+{"level":"info","ts":1490197592.2215567,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490197722.2318845,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490197722.2323391,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:48 ."}
+{"level":"info","ts":1490197722.2323647,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490197722.2323804,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:46 cover.out"}
+{"level":"info","ts":1490197722.2323892,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490197722.2323966,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490197722.232407,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490197722.2324195,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9385 22 mar 16:48 process_test.go"}
+{"level":"info","ts":1490197722.2324321,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490197802.0735002,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490197802.073966,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:49 ."}
+{"level":"info","ts":1490197802.0739887,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490197802.074002,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:48 cover.out"}
+{"level":"info","ts":1490197802.0740166,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490197802.0740995,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490197802.0741105,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490197802.0741205,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9401 22 mar 16:49 process_test.go"}
+{"level":"info","ts":1490197802.0741282,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490198090.8235288,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490198090.8240325,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:50 ."}
+{"level":"info","ts":1490198090.8240588,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490198090.8240807,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:50 cover.out"}
+{"level":"info","ts":1490198090.8241174,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490198090.824238,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490198090.8242548,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490198090.8242807,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8896 22 mar 16:50 process_test.go"}
+{"level":"info","ts":1490198090.824287,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490257336.760596,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490257336.7610955,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 22 mar 16:50 ."}
+{"level":"info","ts":1490257336.761128,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490257336.7611537,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 22 mar 16:54 cover.out"}
+{"level":"info","ts":1490257336.7611687,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490257336.7611852,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490257336.7611938,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490257336.7612324,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  8896 22 mar 16:50 process_test.go"}
+{"level":"info","ts":1490257336.761285,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490257966.142504,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490257966.1430025,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:32 ."}
+{"level":"info","ts":1490257966.1430323,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490257966.1430442,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:22 cover.out"}
+{"level":"info","ts":1490257966.1430638,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490257966.143081,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490257966.1431007,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7508 22 mar 14:51 process.go"}
+{"level":"info","ts":1490257966.143135,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490257966.1431603,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490258002.0028062,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490258002.0032504,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:33 ."}
+{"level":"info","ts":1490258002.0032701,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490258002.0033755,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:32 cover.out"}
+{"level":"info","ts":1490258002.0033903,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490258002.0033956,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490258002.0034008,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7515 23 mar 09:33 process.go"}
+{"level":"info","ts":1490258002.0034087,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490258002.003414,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490258029.888958,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490258029.8895087,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:33 ."}
+{"level":"info","ts":1490258029.8895354,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490258029.8896413,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:33 cover.out"}
+{"level":"info","ts":1490258029.8896608,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490258029.8896735,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490258029.889684,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 09:33 process.go"}
+{"level":"info","ts":1490258029.889709,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490258029.8897223,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490258047.4963315,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490258047.496708,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:34 ."}
+{"level":"info","ts":1490258047.4967265,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490258047.4967349,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:33 cover.out"}
+{"level":"info","ts":1490258047.496743,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490258047.4967513,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490258047.4967678,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7559 23 mar 09:34 process.go"}
+{"level":"info","ts":1490258047.496777,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490258047.4968724,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490258060.7971702,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490258060.797646,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:34 ."}
+{"level":"info","ts":1490258060.797677,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490258060.7977402,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:34 cover.out"}
+{"level":"info","ts":1490258060.797761,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490258060.797775,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490258060.7977836,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 09:34 process.go"}
+{"level":"info","ts":1490258060.7977962,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490258060.797809,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490258233.413083,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490258233.4136124,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 09:34 ."}
+{"level":"info","ts":1490258233.4136486,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490258233.413665,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:34 cover.out"}
+{"level":"info","ts":1490258233.4136791,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490258233.413693,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490258233.413719,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 09:34 process.go"}
+{"level":"info","ts":1490258233.4137347,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 09:32 process_test.go"}
+{"level":"info","ts":1490258233.413748,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490274080.9226527,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490274080.9230773,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:01 ."}
+{"level":"info","ts":1490274080.923099,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490274080.9231088,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 09:37 cover.out"}
+{"level":"info","ts":1490274080.9231172,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490274080.9231224,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490274080.9231305,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 09:34 process.go"}
+{"level":"info","ts":1490274080.923136,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490274080.9231439,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490274174.9667401,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490274174.9669402,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:01 ."}
+{"level":"info","ts":1490274174.966972,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490274174.9669876,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:01 cover.out"}
+{"level":"info","ts":1490274174.9670022,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490274174.9670107,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490274174.9670203,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 09:34 process.go"}
+{"level":"info","ts":1490274174.9670281,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490274174.9670422,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490274365.2861757,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490274365.2863677,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:06 ."}
+{"level":"info","ts":1490274365.2863803,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490274365.286445,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:02 cover.out"}
+{"level":"info","ts":1490274365.2864673,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490274365.2864776,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490274365.2864852,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7559 23 mar 14:06 process.go"}
+{"level":"info","ts":1490274365.2864902,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490274365.286498,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490274842.8541265,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490274842.8543751,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:06 ."}
+{"level":"info","ts":1490274842.85442,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490274842.8545127,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:06 cover.out"}
+{"level":"info","ts":1490274842.8545442,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490274842.8545847,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490274842.854599,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7559 23 mar 14:06 process.go"}
+{"level":"info","ts":1490274842.8546045,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490274842.85461,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490274935.5167072,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490274935.51686,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:06 ."}
+{"level":"info","ts":1490274935.516872,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490274935.5168815,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:14 cover.out"}
+{"level":"info","ts":1490274935.5168927,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490274935.5169075,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490274935.5169203,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7559 23 mar 14:06 process.go"}
+{"level":"info","ts":1490274935.5169284,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490274935.5169408,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490275165.5348878,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490275165.5351217,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:19 ."}
+{"level":"info","ts":1490275165.5351503,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490275165.5351727,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:15 cover.out"}
+{"level":"info","ts":1490275165.5351813,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490275165.5351892,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490275165.535197,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7730 23 mar 14:19 process.go"}
+{"level":"info","ts":1490275165.5352046,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490275165.5352123,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490275270.1135159,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490275270.1137211,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:21 ."}
+{"level":"info","ts":1490275270.113742,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490275270.1137571,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:19 cover.out"}
+{"level":"info","ts":1490275270.1137705,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490275270.1137836,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490275270.1137912,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7812 23 mar 14:21 process.go"}
+{"level":"info","ts":1490275270.1138055,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490275270.11382,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490275300.255515,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490275300.255779,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:21 ."}
+{"level":"info","ts":1490275300.2557986,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490275300.2558112,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:21 cover.out"}
+{"level":"info","ts":1490275300.2558193,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490275300.2558305,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490275300.2558413,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:21 process.go"}
+{"level":"info","ts":1490275300.255852,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490275300.2558625,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490275340.7178018,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490275340.7180066,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:22 ."}
+{"level":"info","ts":1490275340.7180388,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490275340.7180552,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:21 cover.out"}
+{"level":"info","ts":1490275340.7180648,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490275340.7180912,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490275340.7181075,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:22 process.go"}
+{"level":"info","ts":1490275340.7181199,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490275340.7181284,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490276025.110805,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490276025.1109772,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:22 ."}
+{"level":"info","ts":1490276025.11099,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490276025.111056,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:22 cover.out"}
+{"level":"info","ts":1490276025.111064,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490276025.1110756,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490276025.1110837,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:22 process.go"}
+{"level":"info","ts":1490276025.1110914,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490276025.1110966,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490276165.8294,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490276165.8295984,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:36 ."}
+{"level":"info","ts":1490276165.8296704,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490276165.829687,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:33 cover.out"}
+{"level":"info","ts":1490276165.8296962,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490276165.829706,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490276165.8297184,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:36 process.go"}
+{"level":"info","ts":1490276165.829724,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490276165.829733,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490276277.7809749,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490276277.7812057,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:37 ."}
+{"level":"info","ts":1490276277.7812333,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490276277.7812533,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:36 cover.out"}
+{"level":"info","ts":1490276277.7812638,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490276277.7812793,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490276277.7812939,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:37 process.go"}
+{"level":"info","ts":1490276277.7813087,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9559 23 mar 14:01 process_test.go"}
+{"level":"info","ts":1490276277.7813232,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 22 mar 13:08 vms"}
+{"level":"info","ts":1490277045.4576879,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490277045.4578505,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 14:50 ."}
+{"level":"info","ts":1490277045.4578614,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490277045.457871,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:37 cover.out"}
+{"level":"info","ts":1490277045.457884,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490277045.4578972,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490277045.4579105,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:38 process.go"}
+{"level":"info","ts":1490277045.4579234,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9565 23 mar 14:50 process_test.go"}
+{"level":"info","ts":1490277045.4579363,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490277835.0882113,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490277835.08881,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:03 ."}
+{"level":"info","ts":1490277835.0888445,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490277835.088855,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 14:51 cover.out"}
+{"level":"info","ts":1490277835.088869,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490277835.088883,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490277835.0888965,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:38 process.go"}
+{"level":"info","ts":1490277835.0889108,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490277835.08892,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490277877.2975206,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490277877.2979503,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:03 ."}
+{"level":"info","ts":1490277877.2979784,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490277877.297986,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:03 cover.out"}
+{"level":"info","ts":1490277877.2979956,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490277877.2980046,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490277877.298014,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:38 process.go"}
+{"level":"info","ts":1490277877.298023,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490277877.2980287,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490277908.8313391,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490277908.8315232,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:03 ."}
+{"level":"info","ts":1490277908.8315954,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490277908.8316033,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:04 cover.out"}
+{"level":"info","ts":1490277908.8316126,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490277908.8316207,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490277908.8316283,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 14:38 process.go"}
+{"level":"info","ts":1490277908.8316362,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490277908.8316414,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278045.5138721,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278045.514052,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:07 ."}
+{"level":"info","ts":1490278045.514063,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490278045.5140727,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:05 cover.out"}
+{"level":"info","ts":1490278045.514144,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278045.5141542,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278045.5141642,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 15:07 process.go"}
+{"level":"info","ts":1490278045.514172,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490278045.5141892,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278166.7496526,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278166.7498245,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:07 ."}
+{"level":"info","ts":1490278166.749846,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490278166.7498627,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:07 cover.out"}
+{"level":"info","ts":1490278166.749878,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278166.7499366,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278166.7499552,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 15:07 process.go"}
+{"level":"info","ts":1490278166.749974,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490278166.7499833,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278171.7286868,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278171.7288456,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:07 ."}
+{"level":"info","ts":1490278171.7288575,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490278171.728866,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:09 cover.out"}
+{"level":"info","ts":1490278171.7288737,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278171.7288816,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278171.7288911,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 15:07 process.go"}
+{"level":"info","ts":1490278171.728904,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490278171.7289672,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278175.4075282,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278175.4077249,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:07 ."}
+{"level":"info","ts":1490278175.407737,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490278175.407748,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:09 cover.out"}
+{"level":"info","ts":1490278175.4077616,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278175.4077756,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278175.4077878,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7819 23 mar 15:07 process.go"}
+{"level":"info","ts":1490278175.4078243,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490278175.4078364,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278233.4814804,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278233.4819925,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff   272 23 mar 15:10 ."}
+{"level":"info","ts":1490278233.482013,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 13:59 .."}
+{"level":"info","ts":1490278233.482022,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2646 23 mar 15:09 cover.out"}
+{"level":"info","ts":1490278233.4820302,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278233.482038,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278233.4820454,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  7543 23 mar 15:10 process.go"}
+{"level":"info","ts":1490278233.4820533,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  9558 23 mar 15:03 process_test.go"}
+{"level":"info","ts":1490278233.4820588,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff   408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278478.3691688,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278478.3696196,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff    272 23 mar 15:14 ."}
+{"level":"info","ts":1490278478.3696496,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 13:59 .."}
+{"level":"info","ts":1490278478.3696637,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2646 23 mar 15:10 cover.out"}
+{"level":"info","ts":1490278478.3696785,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278478.3696892,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278478.3696985,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   7543 23 mar 15:10 process.go"}
+{"level":"info","ts":1490278478.3697152,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  10216 23 mar 15:14 process_test.go"}
+{"level":"info","ts":1490278478.3697228,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 14:38 vms"}
+{"level":"info","ts":1490278514.0366626,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490278514.0370986,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff    272 23 mar 15:15 ."}
+{"level":"info","ts":1490278514.0371208,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 13:59 .."}
+{"level":"info","ts":1490278514.0371323,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2646 23 mar 15:14 cover.out"}
+{"level":"info","ts":1490278514.0371413,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490278514.0371501,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490278514.0371695,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   7543 23 mar 15:10 process.go"}
+{"level":"info","ts":1490278514.037176,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  10199 23 mar 15:15 process_test.go"}
+{"level":"info","ts":1490278514.0371852,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 14:38 vms"}
+{"level":"info","ts":1490279270.1327925,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"total 72"}
+{"level":"info","ts":1490279270.1331985,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x   8 anthony  staff    272 23 mar 15:27 ."}
+{"level":"info","ts":1490279270.1332276,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 13:59 .."}
+{"level":"info","ts":1490279270.133238,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2646 23 mar 15:15 cover.out"}
+{"level":"info","ts":1490279270.1332517,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   2739 22 mar 15:02 err.log"}
+{"level":"info","ts":1490279270.1332653,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   5716 22 mar 15:06 out.log"}
+{"level":"info","ts":1490279270.133278,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff   7543 23 mar 15:10 process.go"}
+{"level":"info","ts":1490279270.1332939,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"-rw-r--r--   1 anthony  staff  11095 23 mar 15:27 process_test.go"}
+{"level":"info","ts":1490279270.1333048,"caller":"watchdog/process/_test/_obj_test/process.go:87","msg":"drwxr-xr-x  12 anthony  staff    408 23 mar 14:38 vms"}

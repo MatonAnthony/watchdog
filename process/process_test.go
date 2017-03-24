@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"reflect"
 	"syscall"
+	"os"
 )
 
 // -----------------------------------------------------------------------------
@@ -167,20 +168,33 @@ func TestRunRemoteProcessOnNonExistingServer(t *testing.T) {
 
 // Try to send a signal to a local process
 func TestSignal(t *testing.T) {
-	t.Skipf("This test is currently not working due to tail -f being infinite")
-	started, err := RunProcess("/usr/bin/tail", "out.log", "err.log", "tail",
-		"-f", "vms/log")
-	if err != nil {
-		t.Errorf("Fatal Error : failed to create preliminary process")
-		t.Fatalf("Fatal Error : %+v ", err)
+	started := StartedProcess{
+		Executable: "useless",
+		Server: Target {
+			Auth: Auth{
+				Password: "",
+				PrivateKey: "",
+			},
+			Hostname: "local",
+			Name: "local",
+			Port: 0,
+			Username: "",
+		},
+		Pid: os.Getpid(),
+		Logs: Logs{
+			Stdout: "vms/log",
+			Stderr: "vms/log",
+		},
+		Name: "useless",
 	}
 
-	err = started.Signal(syscall.SIGTERM)
+	err := started.Signal(syscall.SIGUSR1)
 	if err != nil {
 		t.Errorf("Expected nil got %s", err.Error())
 	}
 }
 
+// Try to send a kill signal to a local process
 func TestKill(t *testing.T) {
 	t.Skipf("This test is currently not working due to tail -f being infinite")
 	started, err := RunProcess("/usr/bin/tail", "out.log", "err.log", "tail",
@@ -196,6 +210,77 @@ func TestKill(t *testing.T) {
 		t.Errorf("Expected nil got %s", err.Error())
 	}
 }
+
+// Try to send a signal to a remote process
+func TestSignalRemoteProcess(t *testing.T) {
+	proc := Process{
+		Name: "tail",
+		Arguments: []string{"-f", "out.logs"},
+		Target: "test-center-1",
+		Executable: "/usr/bin/tail",
+		Logs: Logs{
+			Stdout: "out.log",
+			Stderr: "err.log",
+		},
+		Number: 1,
+	}
+
+	target := Target{
+		Auth: Auth{
+			Password: "password",
+			PrivateKey: "",
+		},
+		Hostname: "localhost",
+		Port: 10000,
+		Username: "root",
+	}
+
+	started, err := proc.RunRemoteProcess(target)
+	if err != nil {
+		t.Fatalf("Fatal Error : %+v", err)
+	}
+
+	err = started.Signal(syscall.SIGTERM)
+	if err != nil {
+		t.Errorf("Expected nil got %s", err.Error())
+	}
+}
+
+// Try to kill a remote process (SIGTERM)
+func TestKillRemoteProcess(t *testing.T) {
+	proc := Process{
+		Name: "tail",
+		Arguments: []string{"-f", "out.logs"},
+		Target: "test-center-1",
+		Executable: "/usr/bin/tail",
+		Logs: Logs{
+			Stdout: "out.log",
+			Stderr: "err.log",
+		},
+		Number: 1,
+	}
+
+	target := Target{
+		Auth: Auth{
+			Password: "password",
+			PrivateKey: "",
+		},
+		Hostname: "localhost",
+		Port: 10000,
+		Username: "root",
+	}
+
+	started, err := proc.RunRemoteProcess(target)
+	if err != nil {
+		t.Fatalf("Fatal Error : %+v", err)
+	}
+
+	err = started.Kill()
+	if err != nil {
+		t.Errorf("Expected nil got %s", err.Error())
+	}
+}
+
 // -----------------------------------------------------------------------------
 // Test code related to createSSHSession
 // -----------------------------------------------------------------------------
@@ -276,6 +361,48 @@ func TestCreateSSHSessionPassword1(t *testing.T) {
 		t.Errorf("Received %s expected nil", err.Error())
 	}
 
+}
+
+// -----------------------------------------------------------------------------
+// Test code related to Watch
+// -----------------------------------------------------------------------------
+func TestWatchInvalidParameter(t *testing.T) {
+	proc := Process{
+		Name: "tail",
+		Arguments: []string{"-f", "out.logs"},
+		Target: "test-center-1",
+		Executable: "/usr/bin/tail",
+		Logs: Logs{
+			Stdout: "out.log",
+			Stderr: "err.log",
+		},
+		Number: 1,
+	}
+
+	target := Target{
+		Auth: Auth{
+			Password: "password",
+			PrivateKey: "",
+		},
+		Hostname: "localhost",
+		Port: 10000,
+		Username: "root",
+	}
+
+	started, err := proc.RunRemoteProcess(target)
+	if err != nil {
+		t.Fatalf("Fatal Error : %+v", err)
+	}
+
+	err = started.Watch(-1, func(StartedProcess) (string, error){
+		return "", nil
+	}, func(*StartedProcess) (error){
+		return nil
+	})
+
+	if err == nil {
+		t.Errorf("Expected error got nil")
+	}
 }
 
 // -----------------------------------------------------------------------------

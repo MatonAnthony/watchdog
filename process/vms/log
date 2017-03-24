@@ -1,0 +1,17 @@
+{"level":"info","ts":1490184226.8241093,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"/bin/ls: illegal option --  "}
+{"level":"info","ts":1490184226.8242755,"caller":"watchdog/process/_test/_obj_test/process.go:100","msg":"usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]"}
+{"level":"info","ts":1490184360.3818576,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"total 40"}
+{"level":"info","ts":1490184360.3822906,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x   6 anthony  staff   204 22 mar 13:05 ."}
+{"level":"info","ts":1490184360.3823457,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490184360.3823621,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  2601 22 mar 13:04 cover.out"}
+{"level":"info","ts":1490184360.3823712,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  7373 22 mar 12:51 process.go"}
+{"level":"info","ts":1490184360.382384,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  6556 22 mar 13:05 process_test.go"}
+{"level":"info","ts":1490184360.3823926,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  11 anthony  staff   374 22 mar 13:04 vms"}
+{"level":"info","ts":1490184404.4211001,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"total 48"}
+{"level":"info","ts":1490184404.4213717,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x   7 anthony  staff   238 22 mar 13:06 ."}
+{"level":"info","ts":1490184404.4213972,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"lrwxr-xr-x   1 anthony  staff    44 22 mar 13:06 .#process_test.go -> anthony@MacBook-Air-de-Anthony-2.local.17562"}
+{"level":"info","ts":1490184404.4214127,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  12 anthony  staff   408 17 mar 10:38 .."}
+{"level":"info","ts":1490184404.4214213,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  2601 22 mar 13:06 cover.out"}
+{"level":"info","ts":1490184404.4214346,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  7373 22 mar 12:51 process.go"}
+{"level":"info","ts":1490184404.4214482,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"-rw-r--r--   1 anthony  staff  6556 22 mar 13:05 process_test.go"}
+{"level":"info","ts":1490184404.421458,"caller":"watchdog/process/_test/_obj_test/process.go:88","msg":"drwxr-xr-x  11 anthony  staff   374 22 mar 13:04 vms"}

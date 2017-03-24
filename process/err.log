@@ -1,0 +1,18 @@
+{"level":"info","ts":1490190466.926768,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"find:  /var/bootstrap.log: No such file or directory"}
+{"level":"info","ts":1490190521.0616758,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"find:  /var/bootstrap.log: No such file or directory"}
+{"level":"info","ts":1490190571.2718346,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"find:  /var/bootstrap.log: No such file or directory"}
+{"level":"info","ts":1490190615.948795,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"/usr/bin/tail: illegal option --  "}
+{"level":"info","ts":1490190615.9492383,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190631.5004637,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: illegal option --  "}
+{"level":"info","ts":1490190631.5008378,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190687.420369,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: illegal option --  "}
+{"level":"info","ts":1490190687.420793,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190707.6996808,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: illegal option --  "}
+{"level":"info","ts":1490190707.6997554,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190759.9162304,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: illegal option --  "}
+{"level":"info","ts":1490190759.9163074,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190794.067887,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: illegal option --  "}
+{"level":"info","ts":1490190794.0683112,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"usage: tail [-F | -f | -r] [-q] [-b # | -c # | -n #] [file ...]"}
+{"level":"info","ts":1490190829.6991198,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: log: No such file or directory"}
+{"level":"info","ts":1490190925.8581767,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: log: No such file or directory"}
+{"level":"info","ts":1490191355.221995,"caller":"watchdog/process/_test/_obj_test/process.go:99","msg":"tail: log: No such file or directory"}
